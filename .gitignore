@@ -8,3 +8,4 @@ dist
 acceptance-tests/target
 .settings
 acceptance-tests/.settings
+*.iws
