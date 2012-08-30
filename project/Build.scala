@@ -5,7 +5,7 @@ import PlayProject._
 
 object ApplicationBuild extends Build {
 
-    val appName         = "zentask"
+    val appName         = "coles shopping list"
     val appVersion      = "1.0"
 
     val main = PlayProject(appName, appVersion, mainLang = JAVA)

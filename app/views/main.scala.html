@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Zentasks</title>
+        <title>Coles Demo</title>
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <script type="text/javascript" src="@routes.Assets.at("javascripts/jquery-1.7.1.js")"></script>
@@ -14,7 +14,7 @@
     </head>
     <body>
         <header>
-            <a href="@routes.Projects.index" id="logo"><span>Zen</span>tasks</a>
+            <a href="@routes.Projects.index" id="logo"><span>Coles </span>Shopping Lists</a>
             <dl id="user">
                 <dt>@user.name <span>(@user.email)</span></dt>
                 <dd>
@@ -22,7 +22,7 @@
                 </dd>
             </dl>
         </header>
-        <nav>
+        <!--nav>
             <h4 class="dashboard"><a href="#/">Dashboard</a></h4>
             <ul id="projects">
                 @projects.groupBy(_.folder).map {
@@ -32,7 +32,8 @@
                 }
             </ul>
             <button id="newGroup">New group</button>
-        </nav>
+        </nav-->
+
         <section id="main">
             @body
         </section>
