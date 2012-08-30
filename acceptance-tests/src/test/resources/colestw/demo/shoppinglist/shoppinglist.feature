@@ -5,7 +5,7 @@ Feature: Shopping List
     When I ask it to say hi
     Then it should answer with "Howdy World"
 
-  Scenario: Create a new shopping shopping list
+  Scenario: Login to shopping list site
     When I visit the Coles Shopping List site
-    And I create a new shopping list
-    Then I should have a shopping list
+    And I log in
+    Then I should see my dashboard
