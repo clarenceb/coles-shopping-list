@@ -1,0 +1,10 @@
+logs
+project/project
+project/target
+target
+tmp
+.history
+dist
+acceptance-tests/target
+.settings
+acceptance-tests/.settings
