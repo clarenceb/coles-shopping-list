@@ -10,9 +10,13 @@ import cucumber.annotation.en.When;
 import cucumber.runtime.converters.ListConverter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.Console;
 import java.util.List;
+
+import static junit.framework.Assert.assertEquals;
 
 //import static junit.framework.Assert.assertEquals;
 
@@ -39,8 +43,8 @@ public class ShoppingListStepdefs {
         driver.findElement(By.className("loader"));
     }
 
-    @Given("^an empty shopping list$")
-    public void a_empty_shopping_list() throws Throwable {
+    @When("^my shopping list is empty$")
+    public void my_shopping_list_is_empty() throws Throwable {
         shoppingList = new ShoppingList();
     }
 
@@ -53,13 +57,21 @@ public class ShoppingListStepdefs {
 
     @Then("^the shopping list should look like:$")
     public void it_should_look_like(String expected) throws Throwable {
-//        String shoppingItemList;
-//        for (ShoppingItem item : shoppingList) {
-//            shoppingItemList = item.count.toString() + " " + item.name;
-//        }
-//        assertEquals(expected, shoppingItemList);
-        //throw new PendingException();
+        StringBuilder shoppingItemList = new StringBuilder();
+        shoppingList.print(shoppingItemList);
+        assertEquals(expected, shoppingItemList.toString());
     }
+
+    @Given("^I select a project group$")
+    public void I_select_a_project_group() {
+        driver.findElement(By.id("foo")).click();
+    }
+
+    @Then("^I can see the list of items in the group$")
+    public void I_can_see_the_list_of_items_in_the_group(){
+        driver.findElement(By.className("folder"));
+    }
+
 
 	@Before
 	public void before() {
