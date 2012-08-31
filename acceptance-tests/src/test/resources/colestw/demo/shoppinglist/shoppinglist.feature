@@ -28,3 +28,10 @@ Feature: Shopping List
     When I log in
     And I select a project group
     Then I can see the list of items in the group
+
+  Scenario: Adding a new item to the project group
+    Given I visit the Coles Shopping List site
+    When I log in
+    And I select a project group
+    And I enter a new item
+#    Then I can see that the item has been added to the list

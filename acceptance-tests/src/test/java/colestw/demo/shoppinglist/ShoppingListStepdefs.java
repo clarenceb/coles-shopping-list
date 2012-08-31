@@ -60,6 +60,22 @@ public class ShoppingListStepdefs {
         }
     }
 
+    @When("^I enter a new item$")
+    public void I_enter_a_new_item() throws InterruptedException {
+        driver.findElement(By.name("taskBody")).sendKeys("A NEW ITEM");
+        Thread.sleep(2000);
+        driver.findElement(By.name("taskBody")).submit();
+        Thread.sleep(2000);
+    }
+//
+//    @When("^I can see that the item has been added to the list$")
+//    public void I_can_see_that_the_item_has_been_added_to_the_list() {
+//        String someText = driver.findElement(By.tagName("h4")).getText();
+//        assertEquals("A NEW ITEM", someText);
+//    }
+
+
+
     @Then("^the shopping list should look like:$")
     public void it_should_look_like(String expected) throws Throwable {
         StringBuilder shoppingItemList = new StringBuilder();
