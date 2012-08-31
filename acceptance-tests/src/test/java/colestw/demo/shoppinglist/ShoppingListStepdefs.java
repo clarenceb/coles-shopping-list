@@ -85,7 +85,7 @@ public class ShoppingListStepdefs {
 
     @Given("^I select a project group$")
     public void I_select_a_project_group() {
-        driver.findElement(By.id("foo")).click();
+        driver.findElement(By.id("1")).click();
     }
 
     @Then("^I can see the list of items in the group$")
