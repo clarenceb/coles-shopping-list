@@ -60,6 +60,13 @@ public class ShoppingListStepdefs {
         }
     }
 
+    @When("^I can see some static text$")
+    public void I_can_see_some_static_text()    {
+        String someText = driver.findElement(By.id("foo")).getText();
+        //assertEquals("A NEW ITEM", someText);
+        assertEquals("Some static text", someText);
+    }
+
     @When("^I enter a new item$")
     public void I_enter_a_new_item() throws InterruptedException {
         driver.findElement(By.name("taskBody")).sendKeys("A NEW ITEM");
