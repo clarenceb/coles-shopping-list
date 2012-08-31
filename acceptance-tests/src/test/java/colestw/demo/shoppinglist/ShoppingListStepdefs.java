@@ -28,7 +28,12 @@ public class ShoppingListStepdefs {
 
 	@Given("^I visit the Coles Shopping List site$")
 	public void I_visit_the_Coles_Shopping_List_site() throws Throwable {
-		driver.get("http://localhost:9000");
+        String targetHost = System.getenv("TARGET_HOST");
+        if (targetHost == null || targetHost == "") {
+            targetHost = "http://localhost:9000";
+		}
+
+        driver.get(targetHost);
 	}
 
 	@When("^I log in$")
